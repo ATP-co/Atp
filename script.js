@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault(); // evita que recargue la página
       form.style.display = 'none'; // oculta el formulario
-      alert('¡Muchas gracias por tu mensaje!'); 
+      alert('¡Gracias por tu mensaje!'); 
     });
 });
