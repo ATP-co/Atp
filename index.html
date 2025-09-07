@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATP | Desarrollo de Software a Medida</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+    <header class="hero">
+    <div class="overlay">
+        <h1><i class="fas fa-laptop-code"></i> Advanced Tech Programming</h1>
+        <p class="eslogan">Are you Making Progress?</p>
+        <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="#quienessomos"><i class="fas fa-users"></i> Nosotros</a>
+        <a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a>
+        <a href="#portafolio"><i class="fas fa-briefcase"></i> Portafolio</a>
+        <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
+    </nav>
+
+  <main>
+    <section id="quienessomos" class="section nosotros">
+  <h2><i class="fas fa-users"></i> ¿Quiénes somos?</h2>
+  <div class="nosotros-grid">
+    <div class="nosotros-item">
+      <h3><i class="fas fa-bullseye"></i> Misión</h3>
+      <p>Desarrollar softwares innovadores, funcionales y centrados en nuestros clientes, con el propósito de generar un impacto real y construir un futuro de la mano de la tecnología.</p>
+    </div>
+
+    <div class="nosotros-item">
+      <h3><i class="fas fa-eye"></i> Visión</h3>
+      <p>Ser una empresa reconocida por su eficiencia, calidad e innovación tecnológica, ofreciendo soluciones de software que respondan a las necesidades de nuestro alrededor.</p>
+    </div>
+        <div class="nosotros-item">
+        <h3><i class="fas fa-star"></i> Nuestros objetivos</h3>
+        <ul>
+            <li><i class="fas fa-rocket"></i> Crear experiencias inspiradoras que marquen la diferencia.</li>
+            <li><i class="fas fa-user-check"></i> Ofrecer soluciones personalizadas con respuestas reales.</li>
+            <li><i class="fas fa-lightbulb"></i> Fomentar la innovación tecnológica con buenas prácticas.</li>
+            <li><i class="fas fa-shield-alt"></i> Garantizar calidad, seguridad y funcionalidad en cada desarrollo.</li>
+        </ul>
+        </div>
+    </div>
+    </section>
+
+    <section id="servicios" class="section servicios">
+    <h2><i class="fas fa-cogs"></i> Lo que hacemos</h2>
+    <p class="intro-servicios">No solo desarrollamos software. Creamos herramientas que impulsan negocios, conectan personas y resuelven problemas reales.</p>
+    <div class="servicios-grid">
+        <div class="servicio">
+        <i class="fas fa-mobile-alt fa-2x"></i>
+        <h3>Apps móviles</h3>
+        <p>Diseñamos experiencias intuitivas para Android y iOS, con rendimiento optimizado y diseño centrado en el usuario.</p>
+        </div>
+        <div class="servicio">
+        <i class="fas fa-globe fa-2x"></i>
+        <h3>Aplicaciones web</h3>
+        <p>Soluciones escalables, seguras y personalizadas para empresas que buscan eficiencia y presencia digital.</p>
+        </div>
+        <div class="servicio">
+        <i class="fas fa-database fa-2x"></i>
+        <h3>Backend & SQL</h3>
+        <p>Automatizamos procesos con triggers, validaciones y estructuras robustas que garantizan integridad y rendimiento.</p>
+        </div>
+        <div class="servicio">
+        <i class="fas fa-paint-brush fa-2x"></i>
+        <h3>Diseño UI/UX</h3>
+        <p>Interfaces atractivas, accesibles y funcionales que convierten visitantes en usuarios fieles.</p>
+        </div>
+    </div>
+    </section>
+
+    <section id="portafolio">
+    <h2><i class="fas fa-briefcase"></i> Portafolio</h2>
+    <div class="proyectos">
+        
+        <div class="proyecto">
+        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg" alt="App de enseñanza de lenguajes">
+        <h3>LingoBridge</h3>
+        <p>Aplicación web y móvil para enseñar lenguajes alternativos como lengua de señas, braille y lenguas indígenas. Incluye módulos interactivos, reconocimiento visual y gamificación para mejorar la retención.</p>
+        </div>
+
+        <div class="proyecto">
+        <img src="https://images.pexels.com/photos/4386325/pexels-photo-4386325.jpeg" alt="App de renta de objetos">
+        <h3>RentLoop</h3>
+        <p>Plataforma de renta de objetos entre usuarios. Permite publicar artículos, pagar en línea, acordar entregas, y garantiza seguridad con verificación de identidad, calificaciones y filtros inteligentes.</p>
+        </div>
+
+        <div class="proyecto">
+        <img src="https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg" alt="App de organización para estudiantes">
+        <h3>StudyPulse</h3>
+        <p>App de productividad para estudiantes con técnica Pomodoro, gestor de tareas, frases motivacionales y estadísticas de avance. Diseñada para mejorar el enfoque y la organización académica.</p>
+        </div>
+
+    </div>
+    </section>
+
+    <section id="contacto" class="section contacto">
+        <h2><i class="fas fa-envelope-open-text"></i> Contáctanos</h2>
+        <p><i class="fas fa-paper-plane"></i> Escríbenos a <a href="mailto:contacto@atp.com">contacto@atp.com</a></p>
+
+        <button class="btn" onclick="mostrarFormulario()">Enviar mensaje</button>
+
+        <form id="formulario-contacto" class="formulario-contacto" style="display: none;">
+            <div class="campo">
+            <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="campo">
+            <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="campo">
+            <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ATP - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
