@@ -54,7 +54,7 @@ main {
 }
 
 .overlay {
-  background-color: rgba(62, 47, 28, 0.7); /* café con opacidad */
+  background-color: rgba(62, 47, 28, 0.7); /* Cafe con opacidad */
   padding: 40px;
   border-radius: 10px;
 }
@@ -259,11 +259,11 @@ main {
 }
 
 .proyectos {
-  margin-bottom: 40px; /* separa del contacto */
+  margin-bottom: 40px; /* Separa del contacto */
 }
 
 #contacto {
-  margin-top: 60px; /* asegura que no se pegue al portafolio */
+  margin-top: 60px; /* Asegura que no se pegue al portafolio */
   position: relative;
   z-index: 1;
 }
