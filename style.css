@@ -54,7 +54,7 @@ main {
 }
 
 .overlay {
-  background-color: rgba(62, 47, 28, 0.7); /* Cafe con opacidad */
+  background-color: rgba(62, 47, 28, 0.7); /*Cafe con opacidad*/
   padding: 40px;
   border-radius: 10px;
 }
