@@ -260,12 +260,23 @@ main {
 
 .proyectos {
   margin-bottom: 40px; /* Separa del contacto */
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+#portafolio{
+  margin-left: 20px;
+}
+
+#portafolio h2 i {
+  margin-left: 22px; 
 }
 
 #contacto {
   margin-top: 60px; /* Asegura que no se pegue al portafolio */
   position: relative;
   z-index: 1;
+  margin-bottom: 20px;
 }
 
 footer {
