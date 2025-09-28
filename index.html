@@ -3,157 +3,674 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATP | Desarrollo de Software a Medida</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <title>ATP - Advanced Tech Programming</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /*de todo*/
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #2d2d2d;
+    }
+
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #e65100;
+    }
+
+    .btn-primary {
+      background-color: #6d4c41;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #4e342e;
+    }
+
+    .hero {
+      background-size: cover;
+      background-position: center;
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: #e65100;
+      font-weight: bold;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      color: #6d4c41;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #2d2d2d;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    footer a {
+      color: #e65100;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /*logo*/
+    .logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    /*nav*/
+    @keyframes floatCircle {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(45deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    @keyframes floatHero {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /*todas las kards*/
+    .card {
+      border-radius: 15px;
+      transition: all 0.5s ease;
+    }
+
+    /*hover del portafolio, lineamientos y objetivos*/
+    .portafolio-card:hover,
+    .lineamiento-card:hover,
+    .objetivos-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    /*iconos de las kards del portafolio, lineamientos y objetivos*/
+    .portafolio-card i,
+    .lineamiento-card i,
+    .objetivos-card i {
+      transition: transform 0.5s ease, color 0.5s ease;
+    }
+
+    .portafolio-card:hover i,
+    .lineamiento-card:hover i,
+    .objetivos-card:hover i {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    /*kards específicas (portaf, obj y lin)*/
+    .portafolio-card {
+      cursor: pointer;
+    }
+
+    .portafolio-card img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .objetivos-card {
+      color: #fff;
+    }
+
+    .lineamiento-card {
+      cursor: pointer;
+      background: #fff;
+    }
+
+    /*contacto*/
+    .contacto-info, .contacto-form {
+      border-radius: 15px;
+      transition: none;
+    }
+
+    .contacto-info h5 {
+      color:#e65100;
+      font-weight: 600;
+    }
+
+    .contacto-form button {
+      border-radius: 10px;
+      font-weight:600;
+      transition: all 0.3s ease;
+    }
+
+    /*services*/
+    #servicios .card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /*porq*/
+    .porque-col {
+      border-radius: 10px;
+      transition: all 0.4s ease;
+    }
+
+    .porque-col:hover {
+      background: rgba(255,255,255,0.1);
+      transform: scale(1.05);
+    }
+
+    /*hero floatingshapes*/
+    .hero .float-circle-1 {
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      background:rgba(230,81,0,0.2);
+      animation: floatCircle 6s infinite;
+    }
+
+    .hero .float-circle-2 {
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      background:rgba(109,76,65,0.2);
+      animation: floatCircle 5s infinite;
+    }
+  </style>
 </head>
 <body>
-    <header class="hero">
-    <div class="overlay">
-        <h1><i class="fas fa-laptop-code"></i> Advanced Tech Programming</h1>
-        <p class="eslogan">Are you Making Progress?</p>
-        <a href="#contacto" class="btn">Contáctanos</a>
-    </div>
-    </header>
-
-    <nav class="navbar">
-        <a href="#quienessomos"><i class="fas fa-users"></i> Nosotros</a>
-        <a href="#servicios"><i class="fas fa-cogs"></i> Servicios</a>
-        <a href="#portafolio"><i class="fas fa-briefcase"></i> Portafolio</a>
-        <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
-    </nav>
-
-  <main>
-    <section id="quienessomos" class="section nosotros">
-  <h2><i class="fas fa-users"></i> ¿Quiénes somos?</h2>
-
-  <div class="nosotros-grid fila-superior">
-    <div class="nosotros-grid">
-     <div class="nosotros-item">
-      <h3><i class="fas fa-bullseye"></i> Misión</h3>
-      <p>Desarrollar softwares innovadores, funcionales y centrados en nuestros clientes, con el propósito de generar un impacto real y construir un futuro de la mano de la tecnología.</p>
-     </div>
-
-     <div class="nosotros-item">
-      <h3><i class="fas fa-eye"></i> Visión</h3>
-      <p>Ser una empresa reconocida por su eficiencia, calidad e innovación tecnológica, ofreciendo soluciones de software que respondan a las necesidades de nuestro alrededor.</p>
-     </div>
-
-    
-
-     <div class="nosotros-item">
-        <h3><i class="fas fa-handshake"></i> Valores </h3>
-        <li>Innovación: Desarrollar ideas creativas que transforman la tecnología en soluciones útiles. </li>
-        <li>Compromiso: Cumplir las expectaticas de nuestros clientes y con la responsabilidad social de generar impacto positivo. </li>
-        <li>Calidad: Garantizar software confiable, seguro y eficiente.   </li>
-        <li>Transparencia: Actuar con claridad y honestidad en cada proceso fomentando confianza en nuestros clientes y equipo.  </li>
-        <li>Responsabilidad: Creamos soluciones éticas y sostenibles conscientes de su impacto en la sociedad.  </li>
-     </div>
-</div>
-
-<div class="nosotros-grid fila-inferior">
-   <div class="nosotros-item">
-        <h3><i class="fas fa-book-open"></i> Filosofía </h3>
-        <p>Creemos que la tecnología es una herramienta para transformar vidas y organizaciones. </p>
-        <p>Nuestra filosofía se basa en innovar con responsabilidad, trabajar con transparencia y calidad, además de mantener siempre al cliente en el centro de nuestras decisiones. </p>
-        <p>Nos esforzamos por crear soluciones digitales que no solo funcionen, sino que también inspiren confianza, generen impacto positivo y que construyan un futuro mejor con la ayuda de la tecnología. </p>
-    </div>
-
-        <div class="nosotros-item">
-        <h3><i class="fas fa-star"></i> Nuestros objetivos</h3>
-        <ul>
-            <li><i class="fas fa-rocket"></i> Crear experiencias inspiradoras que marquen la diferencia.</li>
-            <li><i class="fas fa-user-check"></i> Ofrecer soluciones personalizadas con respuestas reales.</li>
-            <li><i class="fas fa-lightbulb"></i> Fomentar la innovación tecnológica con buenas prácticas.</li>
-            <li><i class="fas fa-shield-alt"></i> Garantizar calidad, seguridad y funcionalidad en cada desarrollo.</li>
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="atp.jpg" class="logo">
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portafolio">Portafolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#objetivos">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lineamientos">Lineamientos y Políticas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
-        </div>
-</div>
-
-</section>
-
-    <section id="servicios" class="section servicios">
-    <h2><i class="fas fa-cogs"></i> Lo que hacemos</h2>
-    <p class="intro-servicios">No solo desarrollamos software. Creamos herramientas que impulsan negocios, conectan personas y resuelven problemas reales.</p>
-    <div class="servicios-grid">
-        <div class="servicio">
-        <i class="fas fa-mobile-alt fa-2x"></i>
-        <h3>Apps móviles</h3>
-        <p>Diseñamos experiencias intuitivas para Android y iOS, con rendimiento optimizado y diseño centrado en el usuario.</p>
-        </div>
-        <div class="servicio">
-        <i class="fas fa-globe fa-2x"></i>
-        <h3>Aplicaciones web</h3>
-        <p>Soluciones escalables, seguras y personalizadas para empresas que buscan eficiencia y presencia digital.</p>
-        </div>
-        <div class="servicio">
-        <i class="fas fa-database fa-2x"></i>
-        <h3>Backend & SQL</h3>
-        <p>Automatizamos procesos con triggers, validaciones y estructuras robustas que garantizan integridad y rendimiento.</p>
-        </div>
-        <div class="servicio">
-        <i class="fas fa-paint-brush fa-2x"></i>
-        <h3>Diseño UI/UX</h3>
-        <p>Interfaces atractivas, intuitivas, accesibles y funcionales que convierten visitantes en usuarios fieles.</p>
-        </div>
+      </div>
     </div>
-    </section>
+  </nav>
 
-    <section id="portafolio">
-    <h2><i class="fas fa-briefcase"></i> Portafolio</h2>
-    <div class="proyectos">
+  <!--porqsabesqyosigosiendotuyo-->
+  <section class="hero position-relative d-flex align-items-center overflow-hidden" 
+          style="background: linear-gradient(to right, rgba(255,255,255,0.85), rgba(255,255,255,0.7)), 
+          url('https://www.techelevator.com/wp-content/uploads/2024/09/campaign-creators-gMsnXqILjp4-unsplash-610x407.jpg') 
+          no-repeat center center/cover; padding: 120px 0;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h1 style="color:#6d4c41; font-weight:700; font-size:3rem;">Are you Making <span style="color:#e65100;">Progress?</span></h1>
+          <p style="color:#6d4c41; font-size:1.3rem; margin-top:20px;" data-aos="fade-up" data-aos-delay="200">
+            Contáctanos para llevar tu idea al siguiente nivel y transformar tu negocio con tecnología de vanguardia.
+          </p>
+          <a href="#contacto" class="btn btn-primary btn-lg mt-3 me-3" data-aos="zoom-in" data-aos-delay="400">Contáctanos</a>
+          <a href="#servicios" class="btn btn-outline-dark btn-lg mt-3" data-aos="zoom-in" data-aos-delay="500">Ver Servicios</a>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block" data-aos="fade-left" data-aos-delay="300">
+          <img src="atps.jpeg" width="400" alt="Hero image" class="img-fluid rounded shadow" style="animation: floatHero 3s ease-in-out infinite;">
+        </div>
+      </div>
+    </div>
+    <!--los flotantes-->
+    <div class="position-absolute top-0 start-50 translate-middle-x" style="width:150px;height:150px;border-radius:50%;background:rgba(230,81,0,0.2); animation: floatCircle 6s infinite;"></div>
+    <div class="position-absolute bottom-0 end-0" style="width:100px;height:100px;border-radius:50%;background:rgba(109,76,65,0.2); animation: floatCircle 5s infinite;"></div>
+  </section>
+
+  <!--servicios-->
+  <section id="servicios" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3"><i class="bi bi-code-slash fs-1" style="color:#e65100;"></i></div>
+                <h5>Desarrollo a la Medida</h5>
+                <p>Aplicaciones seguras, escalables y eficientes adaptadas a tus necesidades.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3"><i class="bi bi-ui-checks fs-1 mb-3" style="color:#e65100;"></i></div>
+                <h5>Diseño UI/UX</h5>
+                <p>Interfaces atractivas, intuitivas, accesibles y funcionales que convierten visitantes en usuarios fieles.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3"><i class="bi bi-phone fs-1" style="color:#e65100;"></i></div>
+                <h5>Aplicaciones Móviles</h5>
+                <p>Experiencias innovadoras para iOS y Android con gran rendimiento.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3"><i class="bi bi-filetype-sql fs-1 mb-3" style="color:#e65100;"></i></div>
+                <h5>Backend & SQL</h5>
+                <p>Automatizamos procesos con triggers, validaciones y estructuras robustas que garantizan integridad y rendimiento.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3"><i class="bi bi-bar-chart-line fs-1" style="color:#e65100;"></i></div>
+                <h5>Aplicaciones web</h5>
+                <p>Soluciones escalables, seguras y personalizadas para empresas que buscan eficiencia y presencia digital.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="card h-100 text-center p-4">
+                <div class="mb-3"><i class="bi bi-shield-lock fs-1 mb-3" style="color:#e65100;"></i></div>
+                <h5>Ciberseguridad</h5>
+                <p>Protección de datos, auditorías de seguridad, implementación de protocolos.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!--stack-->
+  <section id="tecnologias" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Nuestro Stack</h2>
+      <div class="text-center fs-3 fw-bold" data-aos="fade-up">
+        Android · C · CSS · HTML · Java · JavaScript · MySQL · Python
+      </div>
+    </div>
+  </section>
+
+    <!--portafoli-->
+  <section id="portafolio" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Nuestro Portafolio</h2>
+      <div class="row g-4 mt-4">
+        <!--primero-->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card h-100 shadow-sm portafolio-card">
+            <img src="https://www.revista-ballesol.com/wp-content/uploads/2023/12/Braille.jpg?_gl=1*19x60l9*_up*MQ..*
+            _ga*MTkwMTcwMDAyNC4xNzU5MDIxMzEz*_ga_8FCTVZJWV3*czE3NTkwMjEzMTIkbzEkZzAkdDE3NTkwMjEzMTIkajYwJGwwJGgw" class="card-img-top" alt="LingoBridge">
+            <div class="card-body">
+              <h5 class="card-title">LingoBridge</h5>
+              <p class="card-text">Aplicación web y móvil para enseñar lenguajes alternativos como lengua de señas, 
+                braille y lenguas indígenas. Incluye módulos interactivos, reconocimiento visual y 
+                gamificación para mejorar la retención.</p>
+              <a href="#" class="btn btn-primary btn-sm">Ver Proyecto</a>
+            </div>
+          </div>
+        </div>
+        <!--segundo-->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm portafolio-card">
+            <img src="https://www.espacios.media/wp-content/uploads/2021/10/como-hacer-ventas-por-internet.jpg" 
+            class="card-img-top" alt="ROY">
+            <div class="card-body">
+              <h5 class="card-title">ROY</h5>
+              <p class="card-text">Plataforma de renta de objetos entre usuarios. Permite publicar artículos, 
+                pagar en línea, acordar entregas, y garantiza seguridad con verificación de identidad, 
+                calificaciones y filtros inteligentes.</p>
+              <a href="#" class="btn btn-primary btn-sm">Ver Proyecto</a>
+            </div>
+          </div>
+        </div>
+        <!--tercero-->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm portafolio-card">
+            <img src="https://www.stuwo.at/wp-content/uploads/2025/01/lernapps-notes-2048x1365.jpeg" 
+            class="card-img-top" alt="StudyPulse">
+            <div class="card-body">
+              <h5 class="card-title">StudyPulse</h5>
+              <p class="card-text">App de productividad para estudiantes con técnica Pomodoro, 
+                gestor de tareas, frases motivacionales y estadísticas de avances. 
+                Diseñada para mejorar el enfoque y la organización académica.</p>
+              <a href="#" class="btn btn-primary btn-sm">Ver Proyecto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--aboutus-->
+  <section id="objetivos" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Nuestra Filosofía y Objetivos</h2>
+      <div class="row g-4 mt-4">
+
+        <!--filo-->
+        <div class="col-md-12" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 text-center objetivos-card" style="background: linear-gradient(135deg,#6d4c41,#e65100); color:#fff;">
+            <div class="card-body">
+              <i class="bi bi-lightbulb fs-1 mb-3"></i>
+              <h5>Filosofía</h5>
+              <p>Creemos que la tecnología es una herramienta para transformar vidas y organizaciones.
+                  Nuestra filosofía se basa en innovar con responsabilidad, trabajar con transparencia y calidad y mantener 
+                  siempre al cliente en el centro de nuestras decisiones. Nos esforzamos por crear soluciones digitales que no solo 
+                  funcionen, sino que también inspiren confianza, generen impacto positivo y que construyan un futuro mejor con la 
+                  ayuda de la tecnología.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--mision-->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="card h-100 text-center objetivos-card" style="background: linear-gradient(135deg,#6d4c41,#00acc1); color:#fff;">
+            <div class="card-body">
+              <i class="bi bi-rocket fs-1 mb-3"></i>
+              <h5>Misión</h5>
+              <p>En ATP somos una empresa de desarrollo de software dedicada a crear soluciones tecnológicas innovadoras y funcionales. 
+                  Lo hacemos para impulsar el progreso de personas, empresas y organizaciones, facilitando sus procesos y mejorando sus 
+                  resultados. Alcanzamos este propósito a través de metodologías ágiles, programación avanzada y un equipo comprometido con 
+                  la calidad. Nuestro trabajo está enfocado en quienes buscan crecer y transformarse mediante la tecnología.</p>
+            </div>
+          </div>
+        </div>
+
+        <!--vision-->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+          <div class="card h-100 text-center objetivos-card" style="background: linear-gradient(135deg,#e65100,#6d4c41); color:#fff;">
+            <div class="card-body">
+              <i class="bi bi-eye fs-1 mb-3"></i>
+              <h5>Visión</h5>
+              <p>En ATP queremos ser líderes en el desarrollo de software reconocido por nuestra innovación, confiabilidad y enfoque humano. 
+                  Deseamos ser descritos como una empresa que transforma ideas en soluciones tecnológicas que generan valor real y sostenible.
+                  Nos distinguiremos por valores como la responsabilidad, la creatividad, la excelencia y la adaptabilidad. Aspiramos a expandir 
+                  nuestro impacto, evolucionando constantemente hacia un futuro digital donde la tecnología sea accesible, útil y transformadora 
+                  para todos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- obj-->
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card h-100 shadow-sm p-4 objetivos-card" style="background: #fff3e0; color:#6d4c41; border-left: 5px solid #e65100;">
+            <div>
+              <i class="bi bi-bullseye fs-2 me-3" style="color:#e65100;"></i>
+              <h5 class="mb-0">Objetivos</h5>
+            </div>
+            <p>Crear experiencias inspiradoras, que no solo funcionen, sino que marquen la diferencia.
+              Ofrecer soluciones personalizadas con respuestas a las necesidades reales de nuestros usuarios.
+              Fomentar la innovación tecnológica en cada proyecto con buenas practicas de desarrollo.
+              Garantizar la calidad, seguridad y funcionalidad del software desarrollado.
+            </p>
+          </div>
+        </div>
+
+        <!--valores-->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm p-4 objetivos-card" style="background: #e0f7fa; color:#006064; border-left: 5px solid #00acc1;">
+            <div>
+              <i class="bi bi-people fs-2 me-3" style="color:#00acc1;"></i>
+              <h5 class="mb-0">Valores</h5>
+            </div>
+            <ul class="list-unstyled mb-0">
+              <li><i class="bi bi-check-circle-fill me-2" style="color:#00acc1;"></i><strong>Innovación:</strong> Desarrollar ideas creativas que transforman la tecnología en soluciones útiles.</li>
+              <li><i class="bi bi-check-circle-fill me-2" style="color:#00acc1;"></i><strong>Compromiso:</strong> Cumplir las expectativas de nuestros clientes y con la responsabilidad social de generar impacto positivo.</li>
+              <li><i class="bi bi-check-circle-fill me-2" style="color:#00acc1;"></i><strong>Calidad:</strong> Garantizar software confiable, seguro y eficiente.</li>
+              <li><i class="bi bi-check-circle-fill me-2" style="color:#00acc1;"></i><strong>Transparencia:</strong> Actuar con claridad y honestidad en cada proceso fomentando confianza en nuestros clientes y equipo.</li>
+              <li><i class="bi bi-check-circle-fill me-2" style="color:#00acc1;"></i><strong>Responsabilidad:</strong> Creamos soluciones éticas y sostenibles, conscientes de su impacto en la sociedad.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--politicas-->
+  <section id="lineamientos" class="py-5" style="background: #f5f5f5;">
+    <div class="container">
+      <h2 class="section-title">Políticas</h2>
+      <p class="text-center mb-5" data-aos="fade-up" style="color:#6d4c41; font-weight:500;">
+        En ATP seguimos políticas claras que garantizan calidad, 
+        seguridad y profesionalismo en todos nuestros proyectos, asegurando un estándar confiable en cada entrega.
+      </p>
+      <div class="row g-4">
+        <!--pol1-->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-shield-lock fs-1 mb-3" style="color:#e65100;"></i>
+              <h5>Política de Privacidad</h5>
+              <p>Respetamos la privacidad de los datos de los usuarios. La información proporcionada es 
+                utilizada exclusivamente para personalizar la experiencia de los usuarios. 
+                No se comparten datos personales con terceros sin consentimiento.</p>
+            </div>
+          </div>
+        </div>
+        <!--pol2-->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-book fs-1 mb-3" style="color:#6d4c41;"></i>
+              <h5>Política de PI</h5>
+              <p>Todo el contenido presentado es propiedad de la empresa y 
+                está protegido por derechos de autor. Su uso no autorizado o con otros fines
+                 a los establecidos, está prohibido.</p>
+            </div>
+          </div>
+        </div>
+        <!--pol3-->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-check-circle fs-1 mb-3" style="color:#e65100;"></i>
+              <h5>Política de Calidad</h5>
+              <p>Aseguramos que todos los productos y servicios cumplan estándares de eficiencia, 
+                seguridad y funcionalidad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--lineamo-->
+  <section id="lineamientos" class="py-5" style="background: #f5f5f5;">
+    <div class="container">
+      <h2 class="section-title">Lineamientos</h2>
+      <p class="text-center mb-5" data-aos="fade-up" style="color:#6d4c41; font-weight:500;">
+        En ATP establecemos lineamientos precisos para orientar nuestro trabajo, 
+        fomentando la eficiencia, la responsabilidad y la excelencia en cada proyecto que desarrollamos.
+      </p>
+      <div class="row g-4">
+        <!-- lin1-->
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-person-workspace fs-1 mb-3" style="color:#e65100;"></i>
+              <h5>Orientados a Recursos Humanos:</h5>
+              <p>Fomentar la creatividad y la innovación en cada miembro del equipo.
+              Impulsa el aprendizaje continuo y la actualización tecnológica.
+              Promover un ambiente colaborativo y ético.
+              Reconocer el talento y potenciar las habilidades individuales.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- lin2 -->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-tools fs-1 mb-3" style="color:#6d4c41;"></i>
+              <h5>Orientados a Recursos Técnicos:</h5>
+              <p>Utilizar tecnología actualizada y segura en el desarrollo de software.
+              Implementar metodologías ágiles que optimicen procesos y resultados.
+              Asegurar la escalabilidad y sostenibilidad de las soluciones tecnológicas.
+              Mantener altos estándares de calidad en la programación y diseño.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- lin3 -->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-bank fs-1 mb-3" style="color:#e65100;"></i>
+              <h5>Orientados a Recursos Financieros:</h5>
+              <p>Administrar los recursos con responsabilidad y transparencia.
+              Invertir estratégicamente la innovación y capacitación. 
+              Garantizar la rentabilidad de los proyectos sin comprometer la calidad.
+              Optimizar costos sin afectar el valor ofrecido al cliente.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--lin4 -->
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm lineamiento-card">
+            <div class="card-body text-center">
+              <i class="bi bi-person-lines-fill fs-1 mb-3" style="color:#e65100;"></i>
+              <h5>Orientados al Cliente:</h5>
+              <p>Escuchar activamente las necesidades del cliente para crear soluciones a medida.
+              Brindar un servicio cercano, confiable y transparente.
+              Superar las expectativas de calidad, tiempo de entrega y soporte.
+              Construir relaciones a largo plazo basadas en confianza y resultados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--porq-->
+  <section id="porque" class="py-5" style="background: linear-gradient(135deg,#e65100,#6d4c41); color:#fff;">
+    <div class="container">
+      <h2 class="section-title" style="color:#fff; text-align:center;">¿Por qué elegir ATP?</h2>
+      <div class="row text-center mt-4">
+        <div class="col-md-4 porque-col p-4" data-aos="fade-up">
+          <i class="bi bi-lightning fs-1 mb-2" style="color:#fff;"></i>
+          <h5>Innovación</h5>
+          <p>Estamos siempre un paso adelante en tecnología y soluciones.</p>
+        </div>
+        <div class="col-md-4 porque-col p-4" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-shield-lock fs-1 mb-2" style="color:#fff;"></i>
+          <h5>Seguridad</h5>
+          <p>Tu información y proyectos están protegidos con los más altos estándares.</p>
+        </div>
+        <div class="col-md-4 porque-col p-4" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-people fs-1 mb-2" style="color:#fff;"></i>
+          <h5>Soporte</h5>
+          <p>Asistencia personalizada y cercana para cada cliente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--contacto-->
+  <section id="contacto" class="py-5" style="background:#fafafa;">
+    <div class="container">
+      <h2 class="section-title text-center">Contáctanos</h2>
+      <p class="text-center mb-5" data-aos="fade-up" style="color:#6d4c41; font-weight:500;">
+        Estamos aquí para resolver tus dudas y brindarte la mejor atención.
+      </p>
+      <div class="row g-5">
         
-        <div class="proyecto">
-        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg" alt="App de enseñanza de lenguajes">
-        <h3>LingoBridge</h3>
-        <p>Aplicación web y móvil para enseñar lenguajes alternativos como lengua de señas, braille y lenguas indígenas. Incluye módulos interactivos, reconocimiento visual y gamificación para mejorar la retención.</p>
-        </div>
+        <!--info-->
+        <div class="col-md-5" data-aos="fade-right">
+          <div class="card shadow-sm p-4 contacto-info">
 
-        <div class="proyecto">
-        <img src="https://images.pexels.com/photos/4386325/pexels-photo-4386325.jpeg" alt="App de renta de objetos">
-        <h3>ROY</h3>
-        <p>Plataforma de renta de objetos entre usuarios. Permite publicar artículos, pagar en línea, acordar entregas, y garantiza seguridad con verificación de identidad, calificaciones y filtros inteligentes.</p>
-        </div>
+            <h5 class="mt-4 mb-3"><i class="bi bi-envelope me-2 text-primary"></i> E-mail</h5>
+            <p><a href="mailto:advancedtechprogramming@outlook.com" 
+            color:#6d4c41;">advancedtechprogramming@outlook.com </a></p>
 
-        <div class="proyecto">
-        <img src="https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg" alt="App de organización para estudiantes">
-        <h3>StudyPulse</h3>
-        <p>App de productividad para estudiantes con técnica Pomodoro, gestor de tareas, frases motivacionales y estadísticas de avances. Diseñada para mejorar el enfoque y la organización académica.</p>
+            <h5 class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-primary"></i> Dirección</h5>
+            <p><a href="https://maps.app.goo.gl/3XfzYL2JfeT3bjc77" target="_blank" 
+            color:#6d4c41;">Mar Mediterráneo 227, Nextitla, Miguel Hidalgo, 11420 Ciudad de México, CDMX</a></p>
+            
+            <h5 class="mt-4 mb-3"><i class="bi bi-telephone-fill me-2 text-primary"></i> Teléfonos</h5>
+            <p>+52 55 1234 5678 <br> +52 55 8765 4321</p>
+            
+            <h5 class="mt-4 mb-3"><i class="bi bi-clock-fill me-2 text-primary"></i> Horarios</h5>
+            <p>Lunes - Viernes: 9:00 AM - 7:00 PM <br> Sábado: 10:00 AM - 2:00 PM</p>
+          </div>
         </div>
-
+        
+        <!--regresavaleria-->
+        <div class="col-md-7" data-aos="fade-left">
+          <div class="card shadow-sm p-4 contacto-form">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre*</label>
+                  <input type="text" class="form-control" id="nombre" required>
+                  <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Correo*</label>
+                  <input type="email" class="form-control" id="email" required>
+                  <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="telefono" class="form-label">Teléfono*</label>
+                  <input type="tel" class="form-control" id="telefono" pattern="[0-9]{10}" required>
+                  <div class="invalid-feedback">Por favor ingresa un teléfono válido de 10 dígitos.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="servicio" class="form-label">Servicio de Interés*</label>
+                  <select class="form-select" id="servicio" required>
+                    <option value="">Selecciona un servicio...</option>
+                    <option>Desarrollo Web</option>
+                    <option>Aplicaciones Móviles</option>
+                    <option>Consultoría Tecnológica</option>
+                    <option>Otros</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona un servicio de interés.</div>
+                </div>
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Mensaje*</label>
+                  <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                  <div class="invalid-feedback">Por favor ingresa tu mensaje.</div>
+                </div>
+                <div class="col-12 text-end mt-3">
+                  <button class="btn btn-primary px-4 py-2" type="submit">Enviar Mensaje</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
     </div>
-    </section>
+  </section>
 
-    <section id="contacto" class="section contacto">
-        <h2><i class="fas fa-envelope-open-text"></i> Contáctanos</h2>
-        <p><i class="fas fa-paper-plane"></i> Escríbenos a <a href="mailto:contacto@atp.com">advancedtechprogramming@outlook.com</a></p>
-
-        <button class="btn" onclick="mostrarFormulario()">Enviar mensaje</button>
-
-        <form id="formulario-contacto" class="formulario-contacto" style="display: none;">
-            <div class="campo">
-            <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
-            <input type="text" id="nombre" name="nombre" required>
-            </div>
-
-            <div class="campo">
-            <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="campo">
-            <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
-        </form>
-    </section>
-  </main>
-
+  <!--footer-->
   <footer>
-    <p>&copy; 2025 ATP - Todos los derechos reservados </p>
+    <div class="container text-center">
+      <p>© 2025 ATP - Advanced Tech Programming. Todos los derechos reservados.</p>
+      <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
+    </div>
   </footer>
+
+  <!-- bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- ikonos d bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <script src="js/contacto.js"></script>
 </body>
 </html>
